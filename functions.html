@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        function showWelcomeMessage() {
+            alert("Welcome b-31")
+        }
+         
+        function showMyMessage(message) {
+            alert(message)
+        }
+
+       // showMyMessage("Welocme Angular")
+
+        //showMyMessage("Welcome React")
+
+        function addTwoNo(number1, number2 = 0) {//parameter
+            debugger;
+            var result = number1 + number2;
+            alert("Additon is :" + result)
+        }
+
+        var num1 = 12;
+        var num2 = 14; 
+        //addTwoNo(num1, num2) //arguments
+
+
+
+        var num3 = 22;
+        var num4 = 55; 
+        //addTwoNo(num3);
+        
+
+        var fName = "Chetan";
+        var lName = "Jogi";
+
+        var fullName =  generateFullName(fName, lName)
+
+
+        var fName1 = "Rahul";
+        var lnMAe2 = "Shahu";
+
+        console.log(generateFullName(fName1,lnMAe2))
+
+        function generateFullName(fName, lName) {
+            debugger;
+            var fullName = fName + ' ' + lName;
+            //generateFullName('asdas','asdasd')
+            return fullName;
+        }
+
+        function getPieValue() {
+            return 3.14;
+        }
+
+
+        var getFullName = function getName () {
+            return "Angualr +  React"
+        }
+
+        //getName()
+
+        console.log(getFullName())
+
+
+
+
+
+       
+
+
+
+
+        //call execute invoke
+        //showWelcomeMessage();
+
+    </script>
+
+</body>
+
+</html>

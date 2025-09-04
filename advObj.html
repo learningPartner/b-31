@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+
+        var studentObj = {
+            name: 'chetan',
+            email: 'chetanm@gmail.com',
+            address: {
+                city: 'Nagpur',
+                state: 'MH',
+                pincode: '112233',
+                addressLine1: 'near ATM',
+                permanentAddress: {
+                    city: 'Pune',
+                    state: 'MH'
+                }
+            },
+            familyDetails: {
+                motherName: 'MMM',
+                fatherName: 'AAA',
+                brotherName: '2222'
+            },
+            mobileNoList: [
+                9988998811,
+                1199009900
+            ]
+        }
+        studentObj.address.pincode = 334455;
+        console.log(studentObj.address.pincode)
+        console.log(studentObj.familyDetails.brotherName);
+        console.log(studentObj.address.permanentAddress.city)
+        console.log(studentObj.mobileNoList[1])
+        studentObj.mobileNoList.push(5566556655)
+        console.log(studentObj.mobileNoList)
+
+        var productData = {
+            productName: 'MOto A-2',
+            price: 12500,
+            category:'Mobile',
+            images: [
+                'abc.png',
+                'abc2.jpeg',
+                'abc3.png'
+            ],
+            offers:[
+                'SBI card 10 % off',
+                'IDBI Credit card 15% off'
+            ],
+            productProperties: [
+                { propertYname: 'Ram', value:'12 gb' },
+                { propertYname: 'camrea', value:'50 MP'}
+            ] 
+        }
+
+        var ShoeeproductData = {
+            productName: 'MOto A-2',
+            price: 12500,
+            category:'Mobile',
+            images: [
+                'abc.png',
+                'abc2.jpeg',
+                'abc3.png'
+            ],
+            offers:[
+                'SBI card 10 % off',
+                'IDBI Credit card 15% off'
+            ],
+            productProperties: [
+                { propertYname: 'Material type', value:'12 gb' },
+                { propertYname: 'Closure type', value:'50 MP'}
+            ] 
+        }
+
+
+        var employeeData = {
+            empNo:'E<-1122',
+            name:'Rahu',
+            email: 'ahusdad@bi',
+            conatctNo:'12312312',
+            skills: [
+                'HTML',
+                'csss',
+                'angular',
+                'js'
+            ],
+            projects: [
+                { projName: 'BAnk ERP', isCurrentProject: false, tech:['HTml','css','dot net']},
+                { projName: 'Ecommerc App ', isCurrentProject: true, tech:['HTml','css','dot net', 'Angular']},
+            ]
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

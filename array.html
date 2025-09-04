@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        //element
+        var cityList = ["Pune", "Mumbai", "Nagpur", "Thane", "Panji"];
+
+        var rollNoArray = [11, 112, 113, 114, 115, 116, 117, 118, 119, 120];
+
+        var booleanList = [true, true, false, true, false, false];
+
+        var employeeList = [
+            { empCode: 'emp-321', name: 'Rahul', designation: 'Senior QA', currentProject: 'BAnk ERP' },
+            { empCode: 'emp-322', name: 'Ankit', designation: 'Senior Dot Net Dev', currentProject: 'BAnk ERP' },
+            { empCode: 'emp-323', name: 'Sahil', designation: 'Junior Angular dev', currentProject: 'BAnk ERP' },
+            { empCode: 'emp-324', name: 'Ramesh', designation: 'Senior QA', currentProject: 'BAnk ERP' }
+        ]
+
+
+        console.log(cityList)
+
+        console.log(cityList[2])
+        console.log(cityList[5])
+        cityList[0] = "Bhopal"
+        cityList[5] = "Delhi";
+        console.log(cityList[5])
+        console.log(cityList);  
+
+        console.log(rollNoArray[3]);
+
+        console.log(rollNoArray.length);
+
+
+        var studentNameList = ["Aman","Suraj","Ankit","Rahul"];
+
+        studentNameList.push("Raman")
+        studentNameList.push("Ankit")
+        console.log(studentNameList);
+
+        studentNameList.pop()
+        studentNameList.pop()
+        studentNameList.pop()
+        console.log(studentNameList);
+
+        studentNameList.unshift("Omkar")
+        studentNameList.unshift("Punam")
+        console.log(studentNameList);
+        studentNameList.shift();
+        console.log(studentNameList);
+
+        //splice
+
+        studentNameList.splice(2,1)
+        console.log(studentNameList);
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>Hi from H1</h1>
+
+
+    <div id="myDiv" style="background-color: red;height: 100px;width: 500px;">
+
+    </div>
+
+    <button onclick="createSpan()">Create span</button>
+
+    <button onclick="hideDiv()">Hide</button>
+    <button onclick="showDiv()">Show</button>
+
+    <br>
+    <div id="myDiv2" style="background-color: blue;"></div>
+
+    <button onclick="createCircle()">Create Circle</button>
+    <button onclick="createSquare()">Create Square</button>
+
+    <br>
+    <br>
+    <br><br>
+
+    <select id="myCityDrop">
+
+
+    </select>
+
+    <input type="text" name="" id="txtCity" placeholder="Enter City NAme">
+    <button onclick="addCity()">Add City</button>
+
+    <br>
+    <br>
+    <br><br>
+
+    <select onchange="onCastChage()">
+        <option>OBC</option>
+        <option>SC-NT</option>
+        <option>Other</option>
+    </select>
+    <input type="text" placeholder="Enter Other  Cast">
+
+    <script>
+        function onCastChage() {
+             
+        }
+        function addCity() {
+            var cityName = document.getElementById("txtCity").value;
+
+            var opt = document.createElement('option');
+            opt.innerText = cityName;
+
+            document.getElementById("myCityDrop").append(opt)
+        }
+        function createCircle() {
+            document.getElementById("myDiv2").style.width = '100px';
+            document.getElementById("myDiv2").style.height = '100px';
+            document.getElementById("myDiv2").style.borderRadius = '50%'
+        }
+        function createSquare() {
+            document.getElementById("myDiv2").style.width = '100px';
+            document.getElementById("myDiv2").style.height = '100px';
+            document.getElementById("myDiv2").style.borderRadius = '0%'
+        }
+
+        function hideDiv() {
+            document.getElementById('myDiv').style.display = "none"
+        }
+        function showDiv() {
+            document.getElementById('myDiv').style.display = 'block'
+        }
+        function createSpan() {
+            debugger;
+            var mySpan = document.createElement('span');
+            mySpan.innerText = "This is Span Demo";
+
+            document.getElementById("myDiv").append(mySpan)
+        }
+    </script>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="myDiv3">div</div>
+
+    <button onclick="createCircleByClass()">Create Circle</button>
+    <button onclick="createSquareByClass()">Create Square</button>
+    <script>
+
+        function createCircleByClass() {
+            removeClasses() 
+            document.getElementById('myDiv3').classList.add('cricle')
+        }
+        function createSquareByClass() { 
+            removeClasses()
+            document.getElementById('myDiv3').classList.add('square')
+        }
+
+        function removeClasses() {
+            document.getElementById("myDiv3").classList.remove('cricle');
+            document.getElementById("myDiv3").classList.remove('square');
+        }
+
+
+    </script>
+    <style>
+        .cricle {
+            width: 200px;
+            height: 200px;
+            background-color: yellow;
+            border-radius: 50%;
+        }
+
+        .square {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</body>
+
+</html>

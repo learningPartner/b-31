@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="txtxName">
+    <input type="text" id="txtxName">
+    <input type="text" id="txtxName">
+
+    <button onclick="readVale()">Read Value</button>
+    <br>
+    <p id="myPara">This is Test Para</p>
+
+
+
+    <button onclick="readPText()">Read P Text</button>
+
+    <br>
+
+    <div id="myDiv">
+        <h2>Hi</h2>
+        <p>Test</p> <input type="text"> <span>Span Demo</span>
+    </div>
+    <button onclick="readDiv()">Read Div</button>
+
+    <script>
+        var fullName = "asdas"
+        function readVale() {
+            var val = document.getElementById('txtxName').value;
+            alert(val)
+        }
+        function readPText() {
+            var paraText = document.getElementById('myPara').innerText;
+            console.log(paraText)
+            debugger;
+        }
+
+        function readDiv() {
+            var dioveTetx = document.getElementById('myDiv').innerHTML;
+
+        }
+
+    </script>
+
+    <br>
+    <br>
+
+    <input type="text" placeholder="num 1" id="txtNum1">
+
+    <button onclick="copy()">Copy</button>
+    <input type="text" placeholder="num 1" id="txtNum2">
+    <span id="mySpan">empty</span>
+
+    <div id="myDiv2" style="background-color: gray;">
+
+    </div>
+
+    <script>
+        function copy() {
+            debugger;
+            var text1 = document.getElementById("txtNum1").value;
+
+            document.getElementById("txtNum2").value = text1;
+            document.getElementById("mySpan").innerText = text1
+
+            var div1Html = document.getElementById("myDiv").innerHTML;
+
+            document.getElementById("myDiv2").innerHTML = div1Html
+
+        }
+    </script>
+
+    <br>
+    <br>
+    <input type="text"  class="myInputClass">
+    <input type="text" id="txtFullName"> 
+    <p class="myInputClass">Sample para</p>
+    <select name="" id="DropCity">
+        <option value="">Pune</option>
+    </select>
+     <button onclick="readTextVal()">readTextVal</button>
+
+     <script>
+        function readTextVal() {
+            var teest =  document.getElementsByClassName("myInputClass");
+            alert(teest[0].value)
+            var par =  document.getElementsByClassName('myInputClass')[1].innerText;
+            alert(par); 
+            var name=  document.querySelector('#txtFullName') 
+        }
+
+     </script>
+
+</body>
+
+</html>

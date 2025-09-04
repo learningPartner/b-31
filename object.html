@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        // var studName = "Chetan";
+        // var mobileNo = "123912739";
+        // var email = "asdasd@wh.com";
+        //key value || property value || field value
+
+        var student = {
+            "name": "Chetan",
+            "mobile": '998877665',
+            email: 'chetan@gmail.com',
+            rollNo: 123,
+            isActive: true
+        };
+
+        var compnayInfo = {
+            "company-name":'abc'
+        }
+        console.log(compnayInfo["company-name"])
+
+        
+
+        console.log(student)
+        //access object
+        console.log(student.name)
+
+
+        console.log('before ' + student.rollNo)
+        student.rollNo = 555;
+        console.log('after ' + student.rollNo)
+
+        console.log(student.city)
+
+        student.state = "MAharasshtra"
+
+        console.log(student)
+
+
+
+
+        var employee = {
+            empCode: 'emp-321',
+            name: 'Rahul',
+            designation: 'Senior QA',
+            currentProject: 'BAnk ERP'
+        };
+        console.log(employee.empCode) //by using dot operator
+        console.log(employee['designation']) //by using square bracket 
+
+
+
+        var productData = {
+            productId: '1122',
+            prodName: 'MOto a2',
+            price: 12500,
+            category: 'Mobile'
+        }
+
+        var keyName = 'category';
+
+        console.log(productData.category);
+
+        console.log(productData[keyName])
+
+        productData['image'] = 'abc.jpg';
+        console.log(productData)
+
+        function onChnagePrice() {
+            debugger;
+            var priceText = document.getElementById("txtPRice").value;
+            productData.price = priceText;
+
+        }
+
+        function pridntPrice() {
+            document.getElementById("priceValue").innerText = productData.price;
+        }
+
+    </script>
+
+    <input type="text" id="txtPRice" placeholder="price">
+
+    <button onclick="onChnagePrice()">chnage price</button>
+
+    <button onclick="pridntPrice()">Print Price</button>
+
+    <h1 id="priceValue"></h1>
+
+</body>
+
+</html>

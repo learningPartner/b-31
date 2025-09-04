@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body onresize="onPageWidthChnage()">
+
+    <script>
+        function onPageWidthChnage() {
+            console.log('Page Width Changed')
+        }
+        function showWelcomeMessage() {
+            alert("Welcome B-31")
+        }
+
+        function onCityChnaged() {
+            alert("Cicty CLickwed")
+        }
+
+        function onTextChnage() {
+            alert("Para CHnaged")
+        }
+
+    </script>
+
+
+    <button onclick="showWelcomeMessage()">Show Welcome</button>
+
+    <h1 onclick="showWelcomeMessage()"> Heello</h1>
+
+    <br>
+    <select onchange="onCityChnaged()">
+        <option value="">Pune</option>
+        <option value="">Nagpur</option>
+        <option value="">Mumbai</option>
+    </select>
+
+    <input type="text" onclick="onCityChnaged()">
+    <br>
+
+    <input type="text" oninput="onCityChnaged()">
+    <br>
+    <p onclick="onTextChnage()">This is Para</p>
+
+    <br>
+    <div onmouseenter="onMouseEnter()" onmouseleave="onMOuseLeft()"
+        style="height: 200px;width: 200px;background-color: red;">
+
+
+    </div>
+    <script>
+
+        function onMouseEnter() {
+            console.log("Mounse INNN")
+        }
+        function onMOuseLeft() {
+            console.log("Mounse Out")
+        }
+        function showLang(name) {
+            alert(name)
+        }
+
+    </script>
+
+    <button onclick="showLang('Angular')">Angular</button>
+    <button onclick="showLang('ReactJs')"> ReactJs</button>
+    <button onclick="showLang('Java')">Java</button>
+</body>
+
+</html>

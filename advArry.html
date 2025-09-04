@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        
+
+        var rollNoList = [
+            111, 2, 22, 2, 2,
+        ]
+
+        var studentList = [
+            { name: 'ABC', city: 'Pune', mobile: '1231233' ,address: {},contanoList: [] },
+            { name: 'MNO', city: 'Mumbai', mobile: '1231233' },
+            { name: 'QWE', city: 'Nagpur', mobile: '1231233' },
+            { name: 'TYU', city: 'Pune', mobile: '1231233' }
+        ]
+
+        var studentNAmeList = ['asdas','asdsad']
+
+      
+
+        console.log(studentList[1])
+
+        console.log(studentList[1].mobile)
+
+        studentList[0].state = "MH"
+
+        studentList.push({ name: 'AAA', city: 'Mumbai', mobile: '1231233' })
+
+        console.log(studentList)
+        studentList.splice(2,1)
+        console.log(studentList)
+
+        var cityList = [
+            'Pune',
+            'Nagpur'
+        ]
+        function addCity() {
+            var textValu =  document.getElementById("textCity").value;
+            cityList.push(textValu)
+            console.log(cityList)
+        }
+
+
+    </script> 
+    <input type="text" id="textCity" placeholder="Entre City">
+    <button onclick="addCity()">Add city</button>
+
+
+</body>
+
+</html>

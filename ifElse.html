@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="textNum" placeholder="Number">
+    <button onclick="checkEvenOd()">Check NUm</button>
+
+    <h1 id="resultH1"></h1>
+    <br>
+    <br><br>
+    <input type="text" id="textNum1" placeholder="Number">
+    <input type="text" id="textNum2" placeholder="Number">
+    <button id="btnSum" onclick="addTwoNum()" >Add</button>
+    <input type="text" id="txtResult" placeholder="Number">
+    <script >
+
+         function addTwoNum() {
+            debugger;
+            var num1 =   document.getElementById("textNum1").value;
+            var num2 = document.getElementById("textNum2").value;
+            var result =  num1 + num2;
+            document.getElementById("txtResult").value = result;
+        }
+        debugger;
+        document.getElementById("btnSum").addEventListener('click',addTwoNum)
+
+
+        // var isActive = true;
+        // debugger;
+        // if(isActive == true) {
+        //     alert("Student is Active")
+        // } else {
+        //     alert("Student is De-Active")
+        // }
+
+
+        // var isProductStockAvaialbel = "yes";
+
+        // if(isProductStockAvaialbel == 'yes') {
+        //     console.log("Product is Aviablein in stock")
+        // }
+
+
+        // var num1 =  44;
+        // var num2 = 45;
+
+        // var isStudentPresent = true;
+        // debugger;
+        // if(num1 + num2 > 60 && isStudentPresent == true ) {
+        //     console.log('IF Block Executes')
+        // } else {
+        //     alert("Else Blcok Execuites")
+        // }
+
+        // var dayStartuingChar = "asd";
+
+        // if(dayStartuingChar == 'mon') {
+        //     console.log('Monday')
+        // } else if(dayStartuingChar == 'tue') {
+        //     console.log('Tuesday')
+        // } else if(dayStartuingChar == 'wed'){
+        //      console.log('Wednesday')
+        // } else if(dayStartuingChar == 'thu'){
+        //      console.log('Thursday')
+        // } else if(dayStartuingChar == 'fri'){
+        //      console.log('Friday')
+        // } else if(dayStartuingChar == 'sat'){
+        //      console.log('saturday')
+        // } else if(dayStartuingChar == 'sun'){
+        //      console.log('Sunday')
+        // } else {
+        //     console.log("Wron Day Code")
+        // }
+
+
+
+
+        function checkEvenOdOld() {
+            debugger;
+            var number = document.getElementById("textNum").value;
+            if (isNaN(number) == false) {
+                if (number % 2 == 0) {
+                    document.getElementById("resultH1").innerText = "Number is Even";
+                } else {
+                    document.getElementById("resultH1").innerText = "Number is Odd";
+                }
+            } else {
+                document.getElementById("resultH1").innerText = "Enter Number only";
+            }
+        }
+
+        function checkEvenOd() {
+            debugger;
+            var number = document.getElementById("textNum").value;
+            // if (number % 2 == 0) {
+            //     document.getElementById("resultH1").innerText = "Number is Even";
+            // } else {
+            //     document.getElementById("resultH1").innerText = "Number is Odd";
+            // }
+
+            var isEven = number % 2 == 0;
+            isEven == true ? document.getElementById("resultH1").innerText = "Number is Even" : document.getElementById("resultH1").innerText = "Number is Odd";
+        }
+
+       
+    </script>
+
+
+</body>
+
+</html>
