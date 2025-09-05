@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="myCityUl">
+
+    </ul>
+    <input type="text" placeholder="City">
+    <button onclick="addCity()">Add city</button>
+    <script>
+
+        var cityList = ["Pune", "Nagpur", "Jalgao", "Mumbai"];
+        debugger;
+        CreateDynamicLi()
+
+        function addCity() {
+            var cityName = document.getElementsByTagName('input')[0].value;
+            cityList.push(cityName);
+
+            var myLi = document.createElement("li");
+            myLi.innerText = cityName;
+            document.getElementById("myCityUl").append(myLi)
+
+        }
+
+        function CreateDynamicLi() {
+            for (var index = 0; index < 100000000; index++) {
+                console.log(cityList[index]);
+                var myLi = document.createElement("li");
+                myLi.innerText = cityList[index];
+                document.getElementById("myCityUl").append(myLi)
+            }
+        }
+
+
+        // for(var index = 0; index < 11;index ++) {
+        //      console.log(index)
+        // }
+
+        // for(var index = 10; index > 0; index -- ) {
+        //      console.log(index)
+        // }
+
+        //2 * 1  =  2
+        //2 * 2  = 4
+
+        // for(var index = 1; index < 11;index ++) {
+        //     console.log(5 + " * "+ index + " = "+ 5 * index)
+        // }
+
+        // for(var index = 0;index < 20; index++) {
+        //     if(index % 2 ==0) {
+        //         console.log(index)
+        //     }
+        // }
+
+        var totalNo = 0;
+
+        // for (var index = 0; index < 50; index++) { 
+        //      totalNo = (totalNo + index) * 2;
+        //      if(totalNo > 50) {
+        //         break;
+        //      }
+        //      console.log(totalNo)
+        // }
+
+        // for (var index = 0; index < 50; index++) {
+        //     console.log('start')
+        //     if (index % 2 == 0) {
+        //         continue;
+        //     }
+        //     console.log(index)
+        //     console.log('End')
+        // }
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>
