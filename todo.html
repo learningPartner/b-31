@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App UI</title>
+    <style>
+        body {
+            font-family: "Segoe UI", sans-serif;
+            background: #f1f5f9;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .todo-container {
+            background: #ffffff;
+            width: 400px;
+            border-radius: 16px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            animation: fadeIn 0.8s ease;
+        }
+
+        .todo-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .todo-header h2 {
+            margin: 0;
+            color: #0d9488;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+
+        .input-group input {
+            flex: 1;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            outline: none;
+        }
+
+        .input-group button {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 8px;
+            background: #0d9488;
+            color: #fff;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+        }
+
+        .input-group button:hover {
+            background: #0f766e;
+            transform: scale(1.05);
+        }
+
+        .search-box {
+            margin-bottom: 20px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            outline: none;
+        }
+
+        ul.task-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        ul.task-list li {
+            background: #f9fafb;
+            padding: 10px 14px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            animation: slideIn 0.4s ease;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        ul.task-list li button {
+            border: none;
+            background: #ef4444;
+            color: #fff;
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        ul.task-list li button:hover {
+            background: #b91c1c;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(15px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="todo-container">
+        <div class="todo-header">
+            <h2>My ToDo App</h2>
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="txtTaskName" placeholder="Enter new task...">
+            <button id="btnAdd">Add</button>
+        </div>
+
+        <div class="search-box">
+            <input type="text" placeholder="Search task...">
+        </div>
+
+        <ul class="task-list" >
+        </ul>
+    </div>
+
+    <script>
+        document.getElementById("btnAdd").addEventListener('click', addTask);
+
+        var taskList = [];
+        loadGridData();
+        function addTask() {
+            debugger;
+            var taskName = document.querySelector("#txtTaskName").value;
+            taskList.unshift(taskName);
+            var strArray = JSON.stringify(taskList);
+            localStorage.setItem("taskList", strArray);
+            createItemLi(taskName)
+        }
+
+        function loadGridData() {
+            var localData = localStorage.getItem("taskList");
+            taskList = JSON.parse(localData)
+            debugger;
+            taskList.forEach(element => {
+                createItemLi(element)
+            });
+        }
+
+        function createItemLi(taskName) {
+            var myTaskLi = document.createElement("li");
+            myTaskLi.innerText = taskName;
+
+            var removeBtn = document.createElement('button');
+            removeBtn.id ='btnRemove';
+            removeBtn.dataset.taskname = taskName;
+            removeBtn.innerText = "Delete";
+            removeBtn.addEventListener('click',removeItem)
+
+            myTaskLi.append(removeBtn);
+            document.getElementsByClassName("task-list")[0].append(myTaskLi)
+        }
+
+        function removeItem() {
+            debugger;
+            
+        }
+    </script>
+
+</body>
+
+</html>
