@@ -152,7 +152,7 @@
             <input type="text" placeholder="Search task...">
         </div>
 
-        <ul class="task-list" >
+        <ul class="task-list">
         </ul>
     </div>
 
@@ -161,22 +161,41 @@
 
         var taskList = [];
         loadGridData();
+
         function addTask() {
             debugger;
-            var taskName = document.querySelector("#txtTaskName").value;
-            taskList.unshift(taskName);
-            var strArray = JSON.stringify(taskList);
-            localStorage.setItem("taskList", strArray);
-            createItemLi(taskName)
+            var taskElement = document.querySelector("#txtTaskName");
+            if (taskElement.value.trim() !== "") {
+                var isTaskPresent = taskList.filter(x => x.trim() == taskElement.value);
+                if (isTaskPresent.length == 0) {
+                    taskList.unshift(taskElement.value);
+                    setDataToLocalStorage()
+                    createItemLi(taskElement.value);
+                    taskElement.value = "";
+                } else {
+                    alert('Task ALredy Present')
+                }
+
+            } else {
+                alert("Add Task NAme")
+            }
         }
 
         function loadGridData() {
+            document.getElementsByClassName("task-list")[0].innerHTML = "";
             var localData = localStorage.getItem("taskList");
-            taskList = JSON.parse(localData)
-            debugger;
-            taskList.forEach(element => {
-                createItemLi(element)
-            });
+            if (localData != null) {
+                taskList = JSON.parse(localData)
+                taskList.forEach(element => {
+                    createItemLi(element)
+                });
+            }
+
+        }
+
+        function setDataToLocalStorage() {
+            var strArray = JSON.stringify(taskList);
+            localStorage.setItem("taskList", strArray);
         }
 
         function createItemLi(taskName) {
@@ -184,10 +203,10 @@
             myTaskLi.innerText = taskName;
 
             var removeBtn = document.createElement('button');
-            removeBtn.id ='btnRemove';
+            removeBtn.id = 'btnRemove';
             removeBtn.dataset.taskname = taskName;
             removeBtn.innerText = "Delete";
-            removeBtn.addEventListener('click',removeItem)
+            removeBtn.addEventListener('click', removeItem)
 
             myTaskLi.append(removeBtn);
             document.getElementsByClassName("task-list")[0].append(myTaskLi)
@@ -195,7 +214,13 @@
 
         function removeItem() {
             debugger;
-            
+            const taskName = this.dataset.taskname;
+
+
+            const taskIndex = taskList.findIndex(m => m == taskName);
+            taskList.splice(taskIndex, 1);
+            setDataToLocalStorage()
+            loadGridData()
         }
     </script>
 
